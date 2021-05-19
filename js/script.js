@@ -41,16 +41,22 @@ var app = new Vue ({
             completed: "false",
             // icon: "fas fa-window-close"  
             }
-        ],        
-        newItem: {
-            text: "",
-            completed: "false",
-        },
-
+        ],   
+        newItem: 'prova',
+        
+       
+        
         methods: {
             addItem: function () {           
             this.items.push(this.newItem);
+            this.newItem = {
+                text: "",
+                completed: "false",
+                }        
+            },
+            removeItem: function (indexToRemove) {
+                this.items.splice(indexToRemove,1);
             }
-        },
+        }
     }
 });
